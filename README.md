@@ -7,6 +7,7 @@ Features:
 - logout
 - update profile
 - draw signature on canvas
+- see other signers, filter them according their cities
 
 Used technologies:
 - Handlebars

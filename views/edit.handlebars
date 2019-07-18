@@ -1,0 +1,55 @@
+
+<h2>Edit your profile</h2>
+
+<div class="editprofile">
+    <form method="post">
+
+        <input type="name" name="fn" placeholder="{{userInfo.first_name}}" value="{{userInfo.first_name}}">
+        <label for="fn">First name</label>
+
+
+        <input type="name" name="ln" placeholder="{{userInfo.last_name}}" value="{{userInfo.last_name}}">
+        <label for="ln">Last name</label>
+
+
+        <input type="email" name="em" placeholder="{{userInfo.email}}" value="{{userInfo.email}}">
+        <label for="Email address">Email</label>
+
+
+        <input type="password" name="pw" placeholder="Password">
+        <label for="password">Password</label>
+
+        {{#if userInfo.age}}
+            <input type="number" name="age" min="0" max="130" placeholder="{{userInfo.age}}" value="{{userInfo.age}}">
+        {{else}}
+            <input type="number" name="age" min="0" max="130" placeholder="Age">
+        {{/if}}
+        <label for="Age">Age</label>
+
+
+        {{#if userInfo.city}}
+            <input type="name" name="city" placeholder="{{userInfo.city}}" value="{{userInfo.city}}">
+        {{else}}
+            <input type="name" name="city" placeholder="City">
+        {{/if}}
+        <label for="city">City</label>
+
+
+        {{#if userInfo.url}}
+            <input type="text" name="url" placeholder="{{userInfo.url}}" value="{{userInfo.url}}">
+        {{else}}
+            <input type="text" name="url" placeholder="Homepage">
+        {{/if}}
+        <label for="url">Homepage</label>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <button id="btn-update" type="submit" name="button">Update</button>
+    </form>
+    <form action="/deleteuser" method="post">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <button id="btn-deleteuser" type="submit" name="btn-deleteuser">Delete user</button>
+
+    </form>
+
+</div>
+{{>signers}}
+{{>logout}}

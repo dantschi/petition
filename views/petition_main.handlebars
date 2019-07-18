@@ -1,0 +1,23 @@
+<div class="textbox">
+
+    <p class="desctext">If you agree, please fill the form and submit!</p>
+</div>
+{{>signers}}
+<div class="form">
+    <form method="post">
+        <!-- <input type="text" name="fn" placeholder="First name" autocomplete="off" required>
+        <input type="text" name="ln"  placeholder="Last name" autocomplete="off" required> -->
+        <h2>Sign it here, please:</h2>
+        {{#if error}}
+            <p class="error">Draw your signature before you submit</p>
+        {{/if}}
+        <canvas id="signature" height="100"></canvas>
+        <input type="text" name="signature" >
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <button type="submit" name="button" id="btn-submit">Submit</button>
+    </form>
+    {{#if loggedIn}}
+        {{>logout}}
+    {{/if}}
+
+</div>

@@ -1,0 +1,27 @@
+<div class="signers">
+
+    {{#if alreadySigned}}
+        <p class="desctext">There are already <a href="/signers"> {{signersNr}} people</a> signed the petition,
+            and you are one of them!</p>
+            {{#if isSignedPage}}
+
+            {{else}}
+
+                <p class="desctext small"><a href="/signed"> You can check your signature here!</a></p>
+            {{/if}}
+    {{else}}
+        <p class="desctext">There are already {{signersNr}} people signed the petition.
+        {{#if isPetitionPage}}
+        {{else}}
+        <p class="desctext">You have not signed yet, you can do it <a href="/petition">here.</a></p>
+
+        {{/if}}
+
+
+    {{/if}}
+
+
+
+
+
+</div>

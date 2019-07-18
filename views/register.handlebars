@@ -1,0 +1,15 @@
+
+<h2>Registration</h2>
+
+<form method="post">
+    {{#if error}}
+        <p class="error">With this email address someone has already registered. Change the email address, or <a href="/login">log in</a>!</p>
+    {{/if}}
+    <input name="fn" type="name" placeholder="First name" autocomplete="off" required>
+    <input name="ln" type="name" placeholder="Last name" autocomplete="off" required>
+    <input name="em" type="email" placeholder="E-mail" autocomplete="off" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button id="btn-registration">Submit</button>
+    <h3>Already registered? Log in <a href="/login">here</a></h3>
+</form>

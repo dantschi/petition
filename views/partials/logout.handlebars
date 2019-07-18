@@ -1,0 +1,16 @@
+<div class="logout">
+    <div>
+        {{#if update}}
+
+        {{else}}
+            <h3 id="editprofile"><a href="/profile/edit">Edit your profile</a></h3>
+        {{/if}}
+
+    </div>
+    <form class="logout" method="post" action="/logout">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+        <button id="btn-logout" type="submit" name="button" formaction="/logout">Log out</button>
+    </form>
+
+</div>

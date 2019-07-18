@@ -1,0 +1,18 @@
+<h2>Login</h2>
+
+{{#if loginFailed}}
+    <p class="error">Email or password is not correct</p>
+{{/if}}
+
+{{#if areYouSure}}
+    <p>Are you sure you are registered?</p>
+{{/if}}
+
+<form method="post">
+    <input type="text" name="em" placeholder="Email Address" autocomplete="off" required>
+    <input type="password" name="password" placeholder="Password" autocomplete="off" required>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button id="btn-login" type="submit" name="button">Login</button>
+    <h3>Not registered yet? You can do that <a href="/register">here</a></h3>
+</form>

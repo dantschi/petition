@@ -1,0 +1,19 @@
+<div class="textbox">
+    <p class="desctext">Thank you for signing the petition.</p>
+
+
+
+        {{>signers}}
+
+
+    <div class="signature-holder">
+        <img src={{signature}} alt="signature of user">
+    </div>
+    <form method="post" action="/deletesignature">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <button id="btn-deletesignature" type="submit" name="btn-deletesignature">Delete signature</button>
+    </form>
+    {{#if loggedIn}}
+        {{>logout}}
+    {{/if}}
+</div>

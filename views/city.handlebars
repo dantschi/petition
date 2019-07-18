@@ -1,0 +1,18 @@
+
+{{>signers}}
+<h2>From the city <span class="city">{{city}}</span>  there are the following {{signersNrInCity}} people who signed the petition:</h2>
+
+<div class="signers-box">
+    <ul>
+        {{#signersInCity}}
+            {{#if url}}
+                <li> <a href="{{url}}">{{first_name}} {{last_name}}</a> <span class="tab">{{age}}</span> </li>
+            {{else}}
+                <li>{{first_name}} {{last_name}} <span class="tab">{{age}}</span></li>
+            {{/if}}
+        {{/signersInCity}}
+    </ul>
+</div>
+{{#if loggedIn}}
+    {{>logout}}
+{{/if}}

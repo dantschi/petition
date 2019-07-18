@@ -1,0 +1,28 @@
+<div class="textbox">
+
+    {{#if alreadySigned}}
+        <p class="desctext">Already {{signersNr}} people signed this petition, and you are one of them. Awesome!</p>
+        <p class="small"><a href="/signed"> You can check again your signature if you want!</a></p>
+    {{else}}
+        <p class="desctext">Already {{signersNr}} people signed this petition. Here is a list of them. If you have not signed yet, do not hesitate and <a href="/petition">click here to sign!</a></p>
+    {{/if}}
+
+
+    <div class="signers-box">
+        <ul>
+            {{#signers}}
+                {{#if url}}
+                    <li> <a href="{{url}}">{{first_name}} {{last_name}}</a> <span class="tab">{{age}}</span>  <a href="/signers/{{city}}">{{city}}</a></li>
+                {{else}}
+                    <li>{{first_name}} {{last_name}} <span class="tab">{{age}}</span>  <a href="/signers/{{city}}">{{city}}</a></li>
+                {{/if}}
+            {{/signers}}
+        </ul>
+    </div>
+
+    {{#if loggedIn}}
+        {{>logout}}
+    {{/if}}
+
+
+</div>

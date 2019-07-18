@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Petition</title>
+        <link rel="stylesheet" href="/styles2.css">
+    </head>
+    <body>
+        <div id="overlay"></div>
+        <div class="slide">
+
+            <header>
+                <h1>PETITION</h1>
+            </header>
+
+            <main>
+                <div class="wrapper">
+                    {{#if loggedIn}}
+                    <div class="sticky">
+                        <img id="menu-open" src="/hamburgermenu.svg" alt="menu">
+                    </div>
+
+                    <aside id="sidebar">
+                        <span id="close-it">X</span>
+                        <ul class="sidebar-ul">
+                            {{#if alreadySigned}}
+                            <a href="/signed"><li class="sidebar-li">Signature</li></a>
+                            {{else}}
+                            <a href="/petition"><li class="sidebar-li">Petition</li></a>
+                            {{/if}}
+                            <a href="/profile/edit"><li class="sidebar-li">Profile</li></a>
+                            {{#if alreadySigned}}
+                            <a href="/signers"><li class="sidebar-li">Signers list</li></a>
+                            {{/if}}
+
+                            <form method="post" action="/logout">
+                                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                                <li class="sidebar-li"><button id="logout" type="submit" name="button">Logout</button></li>
+
+                            </form>
+                            <!-- <li class="sidebar-li"></li> -->
+
+                        </ul>
+
+                    </aside>
+                    {{/if}}
+
+
+                    {{>topic}}
+                    {{{body}}}
+
+                    <!-- <div id="bottom-fixed">
+                        <div class="holder">
+                                <span id="go-to-top">&#8679;</span>
+
+                            </div>
+                        </div>
+                    </div> -->
+
+    </main>
+
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="/script.js"></script>
+    </body>
+</html>

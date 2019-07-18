@@ -1,6 +1,12 @@
 ## petition
 
-I created an online petition that visitors can sign to make their voice heard.
+I created an online petition that visitors can sign.
+
+Features:
+- login
+- logout
+- update profile
+- draw signature on canvas
 
 Used technologies:
 - Handlebars
